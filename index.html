@@ -1,0 +1,58 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html> -->
+<!--   <head> -->
+<!--     <meta charset="utf-8"> -->
+<!--     <title>SpaceDucts!</title> -->
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="lib/jsfxr.js"></script>
+    <script src="src/pipe-vert.js"></script>
+<!--     <script src="src/level.js"></script> -->
+<!--   </head> -->
+  <body>
+    <a-scene id="scene" background="#000" antialias="true" -stats keyboard-shortcuts="enterVR:false" game>
+      <a-entity scale=".5 .5 .5">
+        <a-entity id="intro-scene">
+          <a-circle id="teleporter" position="4 .805 3" rotation="-90 0 0"></a-circle>
+          <a-box position="5.5 .5 .5" width="10" depth="3" color="#666"></a-box>
+          <a-box position="10.5 5 5.5" width="3" height="2" depth="13" color="#666"></a-box>
+          <a-entity id="high-scores" text="width:5" position="4.4 4.5 11.2" rotation="0 180 0"></a-entity>
+        </a-entity>
+        <a-entity id="score" text="width:5" position="5.9 3.5 .8"></a-entity>
+
+        <a-entity id="level"></a-entity>
+<!--         <a-entity id="scores"></a-entity> -->
+        <a-entity id="bubbles"></a-entity>
+        <a-entity id="liquid"></a-entity>
+        <a-entity id="pipes"></a-entity>
+
+        <a-entity id="cursor-target" cursor-target></a-entity>
+        <a-entity id="cursor-pipe-container">
+          <a-entity id="cursor-pipe" pipe position="-.5 -.5 -.5"></a-entity>
+        </a-entity>      
+
+        <a-entity id="water" water position="6 .5 6" rotation="-90 0 0"></a-entity>        
+      </a-entity>
+
+      <a-plane id="floor" position="5.5 .39 5.5" rotation="-90 0 0" width="11" height="11"></a-plane>
+      <a-circle id="floor-circle" rotation="-90 0 0" radius=".268" color="#f0f"></a-circle>
+
+      <a-entity light="type:ambient;color:#888"></a-entity>
+      <a-entity light="type:directional;intensity:.6" position="-1 1 0"></a-entity>
+      <a-entity light="type:point;intensity:.6" position="4 4 4"></a-entity>
+
+      <a-entity id="rig" wasd-controls look-controls="pointerLockEnabled:true">
+        <a-entity id="camera" camera>
+          <a-plane id="fade" position="0 0 -.6" width="3" height="2" color="#5b90ae" opacity=".99" material="depthTest:false;shader:flat"></a-plane>
+          <a-entity id="dialogue" text="width:1.2;align:center" position=".05 -.1 -1.5" visible="false">
+            <a-plane width="1.5" height=".6" color="#000" opacity=".7" material="depthTest:false;shader:flat"></a-plane>
+          </a-entity>
+          <a-entity id="instructions" text="width:1.2;align:center" position=".05 -.6 -1.5" visible="false">
+            <a-plane width="1.5" height=".25" color="#000" opacity=".7" material="depthTest:false;shader:flat"></a-plane>
+          </a-entity>
+<!--           <a-entity cursor></a-entity> -->
+        </a-entity>
+        <a-entity id="controller" hand-controls="right" raycaster="direction:0 0 -1" listen-for-button></a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+<!-- </html> -->
